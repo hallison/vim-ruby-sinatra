@@ -1,4 +1,5 @@
 .*.sw[p-z]
+*.tag
 *.tmp
 *.vba.gz
 tmp/*

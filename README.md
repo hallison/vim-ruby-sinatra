@@ -40,7 +40,7 @@ Visit the [script homepage][] for more information.
 Copyright
 ---------
 
-Copyright (C) 2010 Hallison Batista <email@hallisonbatista.com>
+Copyright (C) 2010 Hallison Batista &lt;email@hallisonbatista.com&gt;
 
 [vim]: http://www.vim.org/
   "Vim Editor"
@@ -59,4 +59,10 @@ Copyright (C) 2010 Hallison Batista <email@hallisonbatista.com>
 
 [codaset host]: http://codaset.com/hallison/vim-ruby-sinatra
   "Vim - Ruby/Sinatra repository"
+
+[bash-toolbox]: http://github.com/codigorama/bash-toolbox
+  "Bash-Toolbox - Scripting tools"
+
+[script homepage]: http://www.vim.org/scripts/script.php?script_id=2942
+  "Vim - Ruby/Sinatra"
 
