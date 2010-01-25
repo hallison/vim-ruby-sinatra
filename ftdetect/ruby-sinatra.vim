@@ -1,14 +1,4 @@
-" Ruby/Sinatra application name
-au BufNewFile,BufRead app.rb,application.rb call s:FTruby_sinatra
-
-" Ruby/Sinatra Extension
-au BufNewFile,BufRead sinatra/*.rb set filetype=ruby,sinatra
-
-func! s:FTruby_sinatra()
-  if exists("g:filetype_ruby_sinatra")
-    exe "setfiletype " . g:filetype_ruby_sinatra
-    return
-  endif
+function! s:FTRubySinatraCheck()
   " This function checks for valid Ruby/Sinatra syntax in the first twenty lines.
   " Look for either an opening comment or a program start.
   " If not found, just Ruby.
@@ -19,12 +9,27 @@ func! s:FTruby_sinatra()
           \ || '^\s*\(configure\|set\|enable\|disable\)\>'
           \ || '^\s*\(use\|register\|helpers\|template\)\>'
           \ || '^\s*\(get\|post\|put\|delete\)\>'
-      setfiletype ruby,sinatra
       let g:filetype_ruby_sinatra = "ruby,sinatra"
       return
     endif
     let lnum = lnum + 1
-  endw
-  setfiletype ruby
+  endwhile
 endfunc
+
+function! s:FTRubySinatra()
+  call s:FTRubySinatraCheck()
+  if exists("g:filetype_ruby_sinatra")
+    execute "set filetype=" . g:filetype_ruby_sinatra
+    execute "set syntax=ruby-sinatra"
+  endif
+  return
+endfunc
+
+" Ruby/Sinatra application name
+autocmd BufNewFile,BufRead *.rb call s:FTRubySinatra()
+
+" Ruby/Sinatra Extension
+autocmd BufNewFile,BufRead sinatra/*.rb
+      \ set filetype=ruby,sinatra
+      \ set syntax=ruby-sinatra
 
