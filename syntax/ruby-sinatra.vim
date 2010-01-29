@@ -41,5 +41,5 @@ else
   highlight def link rubyIdentifier NONE
 endif
 
-let b:current_syntax = "ruby,sinatra"
+let b:current_syntax = 'ruby-sinatra'
 
