@@ -1,7 +1,7 @@
 source version.bk
 source manifest.bk
 
-MANIFEST_PATH=autoload:ftdetect:snippets:syntax
+GLOB=(ftdetect/* snippets/* syntax/*)
 
 declare pkg_name=ruby-sinatra
 declare pkg_base=$(dirname "$0")
